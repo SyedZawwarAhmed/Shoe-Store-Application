@@ -8,7 +8,7 @@ class AppRouter {
       case '/':
         return MaterialPageRoute(builder: (_) => const SplashScreenPage());
       case '/home':
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => HomePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
