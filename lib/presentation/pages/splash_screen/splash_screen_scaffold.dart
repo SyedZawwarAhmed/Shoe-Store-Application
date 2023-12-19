@@ -1,24 +1,19 @@
-import 'package:ecommerce_application/SplashScreen/button.dart';
-import 'package:ecommerce_application/SplashScreen/main_image_container.dart';
+import 'package:ecommerce_application/presentation/widgets/button.dart';
+import 'package:ecommerce_application/presentation/widgets/main_image_container.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreenScaffold extends StatelessWidget {
-  const SplashScreenScaffold({super.key});
+class SplashScreenPage extends StatelessWidget {
+  const SplashScreenPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Material is a conceptual piece
-    // of paper on which the UI appears.
     return const Scaffold(
-      // Column is a vertical, linear layout.
       backgroundColor: Colors.black45,
-
       body: Padding(
         padding: EdgeInsets.all(18.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             MainImageContainer(),
             Column(
