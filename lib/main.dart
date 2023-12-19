@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'presentation/pages/splash_screen/splash_screen_scaffold.dart';
+import 'presentation/pages/splash_screen_page.dart';
 
 void main() {
   runApp(
