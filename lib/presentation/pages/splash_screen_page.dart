@@ -9,7 +9,8 @@ class SplashScreenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.black45,
-      body: Padding(
+      body: SafeArea(
+          child: Padding(
         padding: EdgeInsets.all(18.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -49,7 +50,7 @@ class SplashScreenPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      )),
     );
   }
 }
