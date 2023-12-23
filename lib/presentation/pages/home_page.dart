@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(28.0),
+          padding: const EdgeInsets.all(22.0),
           child: Center(
             child: Column(
               children: [
@@ -59,17 +59,50 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const SizedBox(
+                            SizedBox(
                               width: 300,
                               height: 50,
-                              child: Center(
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    hintText: 'Seach for brand or product name',
-                                  ),
-                                ),
-                              ),
+                              child: Stack(
+                                  alignment: Alignment.centerRight,
+                                  children: [
+                                    Center(
+                                      child: TextField(
+                                        cursorColor: Colors.grey,
+                                        decoration: InputDecoration(
+                                            enabledBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                      Radius.circular(10)),
+                                              borderSide: BorderSide(
+                                                color: Colors.grey.shade400,
+                                              ),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                      Radius.circular(10)),
+                                              borderSide: BorderSide(
+                                                color: Colors.grey.shade400,
+                                              ),
+                                            ),
+                                            hintText:
+                                                'Seach for brand or product name...',
+                                            hintStyle: TextStyle(
+                                                color: Colors.grey.shade400,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400)
+
+                                            // text
+                                            ),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.search,
+                                      ),
+                                    )
+                                  ]),
                             ),
                             // SizedBox(
                             const Padding(padding: EdgeInsets.all(5)),
@@ -78,7 +111,10 @@ class _HomePageState extends State<HomePage> {
                                 height: 50,
                                 child: Container(
                                   decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.grey)),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(10)),
+                                      border: Border.all(
+                                          color: Colors.grey.shade400)),
                                   child: const Icon(Icons.filter_alt_outlined),
                                 ),
                               ),
@@ -132,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            childAspectRatio: 0.9,
+                            childAspectRatio: 0.65,
                             mainAxisSpacing: 10,
                             crossAxisSpacing: 10,
                           ),

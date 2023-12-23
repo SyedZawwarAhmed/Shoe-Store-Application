@@ -15,7 +15,7 @@ class Product extends StatelessWidget {
           alignment: Alignment.topRight,
           children: [
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.fromLTRB(20, 60, 20, 60),
               decoration: BoxDecoration(color: Colors.grey.shade200),
               child: Image.asset("assets/images/hero.png"),
             ),

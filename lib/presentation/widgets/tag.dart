@@ -8,14 +8,18 @@ class Tag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.all(Radius.circular(20))),
+      decoration: BoxDecoration(
+          // color: Colors.black,
+          border: Border.all(color: Colors.grey),
+          borderRadius: const BorderRadius.all(Radius.circular(20))),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(25, 8, 25, 8),
+        padding: const EdgeInsets.fromLTRB(30, 8, 30, 8),
         child: Text(
           tagName,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );
