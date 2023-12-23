@@ -1,3 +1,4 @@
+import 'package:ecommerce_application/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
@@ -17,7 +18,27 @@ class Button extends StatelessWidget {
               child: InkWell(
                 splashColor: Colors.white10,
                 onTap: () {
-                  print("Hello world");
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return HomePage();
+                      },
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(0.0, 1.0);
+                        const end = Offset.zero;
+                        const curve = Curves.easeInOut;
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
                 },
                 child: const Center(
                   child: Text("Get Started",
