@@ -15,7 +15,7 @@ class Product extends StatelessWidget {
           alignment: Alignment.topRight,
           children: [
             Container(
-              padding: const EdgeInsets.all(50),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(color: Colors.grey.shade200),
               child: Image.asset("assets/images/hero.png"),
             ),
@@ -25,16 +25,23 @@ class Product extends StatelessWidget {
             ),
           ],
         ),
-        const Padding(padding: EdgeInsets.all(5)),
-        Text(
-          productName.toUpperCase(),
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
+        const Padding(padding: EdgeInsets.all(2)),
+        Expanded(
+          child: Text(
+            productName.toUpperCase(),
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
-        const Padding(padding: EdgeInsets.all(5)),
-        Text('\$$price.00'),
+        const Padding(padding: EdgeInsets.all(2)),
+        Text(
+          '\$$price.00',
+          style: const TextStyle(
+            fontSize: 12,
+          ),
+        ),
       ],
     );
   }
