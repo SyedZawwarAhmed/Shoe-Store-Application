@@ -131,7 +131,10 @@ class _HomePageState extends State<HomePage> {
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2, // number of columns
+                            crossAxisCount: 2,
+                            childAspectRatio: 0.9,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
                           ),
                           itemCount: 20, // number of items in the GridView
                           itemBuilder: (BuildContext context, int index) {
