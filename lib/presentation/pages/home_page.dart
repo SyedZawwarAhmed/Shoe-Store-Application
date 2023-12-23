@@ -1,3 +1,4 @@
+import 'package:ecommerce_application/presentation/routes/bottom_navigator.dart';
 import 'package:ecommerce_application/presentation/widgets/product.dart';
 import 'package:ecommerce_application/presentation/widgets/tag.dart';
 import 'package:flutter/material.dart';
@@ -181,12 +182,13 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigator(),
     );
   }
 }
