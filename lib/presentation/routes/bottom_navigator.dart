@@ -34,9 +34,9 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.white30,
         boxShadow: [
           BoxShadow(
             blurRadius: 20,
@@ -55,7 +55,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             iconSize: 24,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             duration: const Duration(milliseconds: 300),
-            tabBackgroundColor: Colors.grey.shade100,
+            tabBackgroundColor: Colors.grey.shade300,
             color: Colors.black,
             tabs: const [
               GButton(

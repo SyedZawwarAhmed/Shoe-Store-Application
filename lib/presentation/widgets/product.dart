@@ -16,7 +16,7 @@ class Product extends StatelessWidget {
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
-              return ProductDetail(productName, imageUrl);
+              return ProductDetail(productName, price, imageUrl);
             },
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {

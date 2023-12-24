@@ -18,7 +18,8 @@ class AppRouter {
       case '/productDetail':
         if (args is ProductDetailArgs) {
           return MaterialPageRoute(
-            builder: (_) => ProductDetail(args.productName, args.imageUrl),
+            builder: (_) =>
+                ProductDetail(args.productName, args.price, args.imageUrl),
           );
         }
         return _errorRoute(settings.name);
@@ -43,7 +44,8 @@ class AppRouter {
 
 class ProductDetailArgs {
   final String productName;
+  final dynamic price;
   final String imageUrl;
 
-  ProductDetailArgs(this.productName, this.imageUrl);
+  ProductDetailArgs(this.productName, this.price, this.imageUrl);
 }
