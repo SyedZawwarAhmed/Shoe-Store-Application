@@ -1,5 +1,4 @@
 import 'package:ecommerce_application/presentation/widgets/button.dart';
-import 'package:ecommerce_application/presentation/widgets/tag.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatelessWidget {
@@ -44,7 +43,7 @@ class ProductDetail extends StatelessWidget {
                           )),
                       Text(
                         '\$$price.00',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -55,7 +54,8 @@ class ProductDetail extends StatelessWidget {
                   Container(
                     width: 250,
                     height: 50,
-                    child: Button("Add to Cart", Colors.white, Colors.black),
+                    child:
+                        const Button("Add to Cart", Colors.white, Colors.black),
                   )
                 ],
               ),
@@ -110,12 +110,12 @@ class ProductDetail extends StatelessWidget {
                         (size) => Container(
                           width: 38,
                           height: 38,
-                          child: Center(child: Text('$size')),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.grey),
                             // borderRadius: BorderRadius.circular(100),
                           ),
+                          child: Center(child: Text('$size')),
                         ),
                       )
                       .toList(),
