@@ -1,3 +1,4 @@
+import 'package:ecommerce_application/presentation/pages/cart.dart';
 import 'package:ecommerce_application/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,18 @@ class ProductDetail extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(productName),
+          actions: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/cart');
+              },
+              child: const Icon(
+                Icons.shopping_basket_outlined,
+                size: 30,
+              ),
+            ),
+            const Padding(padding: EdgeInsets.all(10))
+          ],
         ),
         bottomSheet: Container(
             height: 130,

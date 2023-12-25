@@ -38,16 +38,21 @@ class _HomePageState extends State<HomePage> {
           child: Center(
             child: Column(
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.menu,
                       size: 30,
                     ),
-                    Icon(
-                      Icons.shopping_basket_outlined,
-                      size: 30,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/cart');
+                      },
+                      child: const Icon(
+                        Icons.shopping_basket_outlined,
+                        size: 30,
+                      ),
                     ),
                   ],
                 ),

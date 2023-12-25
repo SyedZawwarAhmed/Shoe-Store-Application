@@ -1,4 +1,4 @@
-import 'package:ecommerce_application/presentation/pages/product_detail.dart';
+import 'package:ecommerce_application/presentation/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 class Product extends StatelessWidget {
@@ -12,26 +12,10 @@ class Product extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
+        Navigator.pushNamed(
           context,
-          PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) {
-              return ProductDetail(productName, price, imageUrl);
-            },
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, 1.0);
-              const end = Offset.zero;
-              const curve = Curves.easeInOut;
-              var tween =
-                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-              var offsetAnimation = animation.drive(tween);
-              return SlideTransition(
-                position: offsetAnimation,
-                child: child,
-              );
-            },
-          ),
+          '/productDetail',
+          arguments: ProductDetailArgs(productName, price, imageUrl),
         );
       },
       child: Column(
