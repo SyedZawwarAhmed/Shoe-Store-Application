@@ -51,11 +51,11 @@ class ProductDetail extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
+                  const SizedBox(
                     width: 250,
                     height: 50,
                     child:
-                        const Button("Add to Cart", Colors.white, Colors.black),
+                        Button("Add to Cart", Colors.white, Colors.black),
                   )
                 ],
               ),

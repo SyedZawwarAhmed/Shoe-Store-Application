@@ -17,7 +17,7 @@ class Button extends StatelessWidget {
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) {
-              return HomePage();
+              return const HomePage();
             },
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
