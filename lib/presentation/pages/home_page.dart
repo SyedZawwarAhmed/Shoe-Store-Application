@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(22.0),
+          padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
           child: Center(
             child: Column(
               children: [
@@ -175,10 +175,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                           itemCount: 20, // number of items in the GridView
                           itemBuilder: (BuildContext context, int index) {
-                            return const Product(
-                                "AFI Crater flyknit nn (gs)", 670);
+                            return const Product("AFI Crater flyknit nn (gs)",
+                                670, "assets/images/hero.png");
                           },
                         ),
+                        const Padding(padding: EdgeInsets.all(20)),
                       ],
                     ),
                   ),
@@ -188,7 +189,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigator(),
+      bottomNavigationBar: const BottomNavigator(),
     );
   }
 }
