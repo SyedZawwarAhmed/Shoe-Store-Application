@@ -45,8 +45,10 @@ class SplashScreenPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(20)),
-                Button("Get Started", Colors.black, Colors.white),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 60),
+                  child: Button("Get Started", Colors.black, Colors.white),
+                ),
               ],
             ),
           ],

@@ -11,20 +11,23 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sizes = [3, 4, 5, 6, 7, 8, 9, 10];
+    var otherImages = [];
+    for (int i = 0; i < 6; i++) {
+      otherImages.add(imageUrl);
+    }
 
     return Scaffold(
         appBar: AppBar(
           title: Text(productName),
         ),
         bottomSheet: Container(
-            height: 100,
+            height: 130,
             decoration: BoxDecoration(
-              color: Colors.white60,
+              color: Theme.of(context).scaffoldBackgroundColor,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
-                  spreadRadius: 4,
-                  blurRadius: 7, // changes position of shadow
+                  blurRadius: 7,
                 ),
               ],
             ),
@@ -34,7 +37,7 @@ class ProductDetail extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Price",
@@ -52,10 +55,9 @@ class ProductDetail extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    width: 250,
+                    width: 200,
                     height: 50,
-                    child:
-                        Button("Add to Cart", Colors.white, Colors.black),
+                    child: Button("Add to Cart", Colors.white, Colors.black),
                   )
                 ],
               ),
@@ -72,6 +74,26 @@ class ProductDetail extends StatelessWidget {
                     padding: const EdgeInsets.all(15.0),
                     margin: const EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                     child: Image.asset(imageUrl),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: otherImages
+                        .map(
+                          (image) => Container(
+                            width: 55,
+                            height: 55,
+                            padding: const EdgeInsets.fromLTRB(7, 5, 7, 5),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.shade400),
+                              borderRadius: BorderRadius.circular(3),
+                            ),
+                            child: Image.asset(image),
+                          ),
+                        )
+                        .toList(),
                   ),
                 ),
                 Text(
