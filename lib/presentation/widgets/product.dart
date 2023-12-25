@@ -14,8 +14,8 @@ class Product extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context,
-          '/productDetail',
-          arguments: ProductDetailArgs(productName, price, imageUrl),
+          '/productDetailPage',
+          arguments: ProductDetailPageArgs(productName, price, imageUrl),
         );
       },
       child: Column(

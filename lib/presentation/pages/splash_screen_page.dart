@@ -7,19 +7,19 @@ class SplashScreenPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black45,
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(18.0),
+        padding: const EdgeInsets.all(18.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MainImageContainer(),
+            const MainImageContainer(),
             Column(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(0, 10, 0, 30),
                   child: Center(
                     child: Text(
@@ -34,7 +34,7 @@ class SplashScreenPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Center(
+                const Center(
                   child: Text(
                     'Complete your style with awesome shoes and sneakers from us',
                     style: TextStyle(
@@ -46,8 +46,13 @@ class SplashScreenPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 60),
-                  child: Button("Get Started", Colors.black, Colors.white),
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 60),
+                  child: Button("Get Started", Colors.black, Colors.white, () {
+                    Navigator.pushNamed(
+                      context,
+                      '/home',
+                    );
+                  }),
                 ),
               ],
             ),

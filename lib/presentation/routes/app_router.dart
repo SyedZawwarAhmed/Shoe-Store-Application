@@ -4,6 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_application/presentation/pages/home_page.dart';
 import '../pages/splash_screen_page.dart';
 
+class ProductDetailPageArgs {
+  final String productName;
+  final dynamic price;
+  final String imageUrl;
+
+  ProductDetailPageArgs(this.productName, this.price, this.imageUrl);
+}
+
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -18,11 +26,11 @@ class AppRouter {
               const HomePage(),
           transitionsBuilder: pageTransition,
         );
-      case '/productDetail':
-        if (args is ProductDetailArgs) {
+      case '/productDetailPage':
+        if (args is ProductDetailPageArgs) {
           return PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
-                ProductDetail(args.productName, args.price, args.imageUrl),
+                ProductDetailPage(args.productName, args.price, args.imageUrl),
             transitionsBuilder: pageTransition,
           );
         }
@@ -61,12 +69,4 @@ class AppRouter {
       ),
     );
   }
-}
-
-class ProductDetailArgs {
-  final String productName;
-  final dynamic price;
-  final String imageUrl;
-
-  ProductDetailArgs(this.productName, this.price, this.imageUrl);
 }

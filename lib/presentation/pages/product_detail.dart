@@ -1,9 +1,9 @@
-import 'package:ecommerce_application/presentation/pages/cart.dart';
 import 'package:ecommerce_application/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetail extends StatelessWidget {
-  const ProductDetail(this.productName, this.price, this.imageUrl, {super.key});
+class ProductDetailPage extends StatelessWidget {
+  const ProductDetailPage(this.productName, this.price, this.imageUrl,
+      {super.key});
 
   final String productName;
   final dynamic price;
@@ -34,7 +34,7 @@ class ProductDetail extends StatelessWidget {
           ],
         ),
         bottomSheet: Container(
-            height: 130,
+            height: 120,
             decoration: BoxDecoration(
               color: Theme.of(context).scaffoldBackgroundColor,
               boxShadow: [
@@ -67,10 +67,11 @@ class ProductDetail extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 200,
                     height: 50,
-                    child: Button("Add to Cart", Colors.white, Colors.black),
+                    child: Button(
+                        "Add to Cart", Colors.white, Colors.black, () {}),
                   )
                 ],
               ),
