@@ -1,8 +1,9 @@
 import 'package:ecommerce_application/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetail extends StatelessWidget {
-  const ProductDetail(this.productName, this.price, this.imageUrl, {super.key});
+class ProductDetailPage extends StatelessWidget {
+  const ProductDetailPage(this.productName, this.price, this.imageUrl,
+      {super.key});
 
   final String productName;
   final dynamic price;
@@ -19,49 +20,63 @@ class ProductDetail extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(productName),
+          actions: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/cart');
+              },
+              child: const Icon(
+                Icons.shopping_basket_outlined,
+                size: 30,
+              ),
+            ),
+            const Padding(padding: EdgeInsets.all(10))
+          ],
         ),
         bottomSheet: Container(
-            height: 130,
-            decoration: BoxDecoration(
-              color: Theme.of(context).scaffoldBackgroundColor,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 7,
+          height: 120,
+          decoration: BoxDecoration(
+            color: Theme.of(context).scaffoldBackgroundColor,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 7,
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(22.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Price",
+                        style: TextStyle(
+                          color: Colors.grey.shade700,
+                        )),
+                    Text(
+                      '\$$price.00',
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
+                SizedBox(
+                  width: 200,
+                  height: 50,
+                  child:
+                      Button("Add to Cart", Colors.white, Colors.black, () {}),
+                )
               ],
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(22.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Price",
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                          )),
-                      Text(
-                        '\$$price.00',
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 200,
-                    height: 50,
-                    child: Button("Add to Cart", Colors.white, Colors.black),
-                  )
-                ],
-              ),
-            )),
+          ),
+        ),
         body: SafeArea(
             child: SingleChildScrollView(
           child: Padding(
