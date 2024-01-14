@@ -149,14 +149,14 @@ class Cart extends StatelessWidget {
             child: ListView(
               children: [
                 CheckoutDetailsRow("Subtotal Items (${cartItems.length})", 432),
-                CheckoutDetailsRow("Delivery Fee", 432),
+                const CheckoutDetailsRow("Delivery Fee", 432),
                 Divider(
                   color: Colors.grey.shade300,
                   height: 25,
                   thickness: 1,
                 ),
-                CheckoutDetailsRow("Total", 432),
-                Padding(padding: EdgeInsets.all(10)),
+                const CheckoutDetailsRow("Total", 432),
+                const Padding(padding: EdgeInsets.all(10)),
                 Button("Go To Payment", Colors.white, Colors.black, () {}),
               ],
             )),
@@ -174,17 +174,17 @@ class CheckoutDetailsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             amountType,
-            style: TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           ),
           Text(
             "\$$amount.00",
-            style: TextStyle(fontWeight: FontWeight.w600),
+            style: const TextStyle(fontWeight: FontWeight.w600),
           )
         ],
       ),
