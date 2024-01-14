@@ -29,10 +29,6 @@ class Product extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.grey.shade200),
                 child: Image.asset(imageUrl),
               ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Icon(Icons.favorite_border),
-              ),
             ],
           ),
           const Padding(padding: EdgeInsets.all(2)),
